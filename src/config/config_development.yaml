@@ -1,0 +1,27 @@
+# src/config/config_development.yaml
+version: "0.1.0"
+
+git:
+  default_branch: "develop"
+  commit_message_template: "feat: {message}"
+  max_commits_per_day: 10
+  min_commits_per_day: 1
+  default_author: "Git Contributor"
+  default_email: "contributor@example.com"
+
+scraper:
+  request_timeout: 30
+  max_retries: 3
+  retry_delay: 5
+  user_agent: "Git-Contribution-Analyzer/0.1.0"
+  max_concurrent_requests: 5
+
+date:
+  date_format: "%Y-%m-%d %H:%M:%S"
+  timezone: "UTC"
+  weekend_policy: "skip"
+  max_days_lookback: 365
+  max_days_ahead: 30
+
+database:
+  url: "sqlite:///./git_analyzer.db"
